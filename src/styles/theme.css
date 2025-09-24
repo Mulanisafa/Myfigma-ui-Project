@@ -1,0 +1,75 @@
+/* src/styles/theme.css */
+
+:root {
+  /* Colors */
+  --color-primary: #B9FF66;
+  --color-dark: #191A23;
+  --color-light: #F3F3F3;
+  --color-gray: #D5D5D5; /* A shade of gray for borders/text */
+
+  /* Font */
+  --font-primary: "Positivus", sans-serif; /* Replace with the actual font name */
+
+  /* Typography sizes - Mobile First */
+  --h1-size-mobile: 2.5rem;
+  --h2-size-mobile: 2rem;
+  --h3-size-mobile: 1.5rem;
+  --h4-size-mobile: 1.25rem;
+  --p-size-mobile: 1rem;
+
+  /* Typography sizes - Desktop */
+  --h1-size-desktop: 4rem;
+  --h2-size-desktop: 3rem;
+  --h3-size-desktop: 2.5rem;
+  --h4-size-desktop: 2rem;
+  --p-size-desktop: 1.125rem;
+}
+
+/* Global typography */
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-dark); /* Main background is dark */
+  color: var(--color-light); /* Main text is light */
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--h1-size-mobile);
+}
+h2 {
+  font-size: var(--h2-size-mobile);
+}
+h3 {
+  font-size: var(--h3-size-mobile);
+}
+h4 {
+  font-size: var(--h4-size-mobile);
+}
+p {
+  font-size: var(--p-size-mobile);
+}
+
+/* Media query for desktop styles */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--h1-size-desktop);
+  }
+  h2 {
+    font-size: var(--h2-size-desktop);
+  }
+  h3 {
+    font-size: var(--h3-size-desktop);
+  }
+  h4 {
+    font-size: var(--h4-size-desktop);
+  }
+  p {
+    font-size: var(--p-size-desktop);
+  }
+}

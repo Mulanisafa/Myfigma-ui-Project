@@ -1,0 +1,38 @@
+.services-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.service-card.light-bg {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.service-card.green-bg {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+@media (min-width: 768px) {
+  .services-section {
+    padding: 4rem 2rem;
+  }
+  .services-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

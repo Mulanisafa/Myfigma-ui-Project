@@ -1,0 +1,36 @@
+.testimonials-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: scroll; /* Enable horizontal scrolling for mobile */
+  gap: 1.5rem;
+  padding-bottom: 1rem; /* Space for scrollbar */
+}
+
+.testimonial-card {
+  flex-shrink: 0; /* Prevents cards from shrinking */
+  width: 90%; /* Adjust width for mobile */
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-gray);
+  text-align: left;
+}
+
+.testimonial-card h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-slider {
+    overflow-x: hidden; /* Hide scrollbar on desktop */
+    justify-content: center;
+  }
+  .testimonial-card {
+    width: 30%; /* Set a fixed width for desktop */
+  }
+}

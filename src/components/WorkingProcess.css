@@ -1,0 +1,39 @@
+.working-process-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.process-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.process-step {
+  padding: 1.5rem;
+  border: 1px solid var(--color-light);
+  border-radius: 12px;
+  background-color: var(--color-dark);
+}
+
+.process-step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.process-step-header span {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.process-step-description {
+  display: none;
+  margin-top: 1rem;
+}
+
+.process-step:first-child .process-step-description {
+  display: block;
+}
