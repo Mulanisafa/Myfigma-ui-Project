@@ -3,21 +3,52 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--color-light);
+  background-color: #fff; 
 }
 
-.header h1 {
-  color: var(--color-primary);
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.header ul {
+.logo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  color: #000; /* black text */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  align-items: center;
 }
 
-.header a {
+.nav-links a {
   text-decoration: none;
-  color: var(--color-dark);
+  color: #000; /* black links */
   font-weight: bold;
+}
+
+.quote-btn {
+  border: 2px solid #000; /* black border */
+  color: #000;             /* black text */
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+  background-color: #000; /* black background on hover */
+  color: #fff;            /* white text on hover */
+  border-color: #000;
 }

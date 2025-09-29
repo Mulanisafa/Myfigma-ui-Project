@@ -1,38 +1,177 @@
+:root {
+    --color-primary-green: #A3E635;
+    --color-dark: #1f2937; /* Very dark gray */
+    --color-light: #ffffff;
+    --color-border: #e5e7eb;
+}
+
+/* Base Styles */
 .services-section {
-  padding: 2rem 1rem;
-  text-align: center;
+    padding: 6rem 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-light);
+}
+
+.section-header {
+    max-width: 1280px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: black;
+    line-height: 1;
+    background-color: var(--color-primary-green);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: black;
+    max-width: 600px;
+    margin-bottom: 2rem;
 }
 
 .services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
+/* Service Card Styles */
 .service-card {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* text left, illustration right */
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: left;
+    overflow: hidden;
+    min-height: 200px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: var(--color-light);
 }
 
-.service-card.light-bg {
-  background-color: var(--color-light);
-  color: var(--color-dark);
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-.service-card.green-bg {
-  background-color: var(--color-primary);
-  color: var(--color-dark);
+/* Card Content */
+.card-content {
+    flex: 1; /* take remaining space */
+    z-index: 10;
 }
 
-@media (min-width: 768px) {
-  .services-section {
-    padding: 4rem 2rem;
-  }
-  .services-grid {
-    flex-direction: row;
+.card-content h3 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+}
+
+/* Small Icon Before Text */
+.learn-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Highlight text */
+.highlight {
+    background-color: var(--color-primary-green);
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.green-bg .highlight {
+    background-color: transparent;
+}
+
+/* Illustration Block inside Service Card */
+.card-image {
+    flex: 0 0 100px;       /* fixed width */
+    height: 100px;         /* fixed height */
+    display: flex;
+    align-items: center;
     justify-content: center;
-  }
+    background-color: var(--color-primary-green); /* optional */
+    border-radius: 1rem;    /* rounded corners for the block */
+    padding: 0.5rem;
+    margin-left: 1rem;      /* spacing between text and image */
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;  /* optional rounding */
+    display: block;
+}
+
+/* Background variations */
+.light-bg {
+    border: 2px solid var(--color-border);
+    color: var(--color-dark);
+}
+
+.green-bg {
+    background-color: var(--color-primary-green);
+    color: var(--color-dark);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .section-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .section-header p {
+        max-width: 50%;
+        margin-top: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .service-card {
+        flex-direction: column; /* stack image under text on mobile */
+        align-items: flex-start;
+    }
+
+    .card-image {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 80px;
+        height: 80px;
+    }
 }

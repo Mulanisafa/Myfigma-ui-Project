@@ -1,21 +1,48 @@
 .working-process-section {
   padding: 2rem 1rem;
   text-align: center;
+  
 }
 
 .process-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
 }
 
 .process-step {
   padding: 1.5rem;
-  border: 1px solid var(--color-light);
   border-radius: 12px;
-  background-color: var(--color-dark);
+  color: var(--color-light); /* default text color */
+  transition: background-color 0.3s ease;
+  margin-right: 5rem;
 }
 
+/* First block: primary green */
+.process-step:first-child {
+  background-color: var(--color-primary-green);
+  color: var(--color-dark);
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+/* Second block: light gray */
+.process-step:nth-child(2) {
+  background-color: #f3f4f6; /* light gray */
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+/* Other blocks: dark by default */
+.process-step:not(:first-child):not(:nth-child(2)) {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+/* Header inside each step */
 .process-step-header {
   display: flex;
   align-items: center;
@@ -24,16 +51,18 @@
 }
 
 .process-step-header span {
-  color: var(--color-primary);
+  color: var(--color-dark);
   font-weight: 700;
   font-size: 2rem;
 }
 
+/* Description inside each step */
 .process-step-description {
   display: none;
   margin-top: 1rem;
 }
 
+/* Show the description of the first step by default */
 .process-step:first-child .process-step-description {
   display: block;
 }

@@ -1,36 +1,111 @@
+:root {
+  --color-primary-green: #A3E635;
+  --color-dark: #1f2937; /* Very dark gray */
+  --color-light: #ffffff;
+  --color-border: #e5e7eb;
+}
+
+/* Testimonials Section */
 .testimonials-section {
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
   text-align: center;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light);
 }
 
-.testimonial-slider {
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* Outer frame around the testimonial slider */
+.testimonial-frame {
+  border: 2px solid #000000; /* black border */
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 1300px; /* increased width */
+  max-height: 1200px;
+  margin: 0 auto;
+  background-color: #111827; /* black background */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Outer wrapper for slider */
+.testimonial-slider-outer {
+  overflow-x: auto; /* horizontal scroll for mobile */
+  padding-bottom: 1rem; /* space for scrollbar */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Inner wrapper to hold cards */
+.testimonial-slider-inner {
   display: flex;
-  overflow-x: scroll; /* Enable horizontal scrolling for mobile */
   gap: 1.5rem;
-  padding-bottom: 1rem; /* Space for scrollbar */
+  justify-content: flex-start; /* align cards to left by default */
+  flex-wrap: nowrap;
 }
 
+/* Individual testimonial card */
 .testimonial-card {
-  flex-shrink: 0; /* Prevents cards from shrinking */
-  width: 90%; /* Adjust width for mobile */
+  flex-shrink: 0; /* prevent shrinking */
+  width: 95%; /* wider block horizontally on mobile */
   padding: 2rem;
   border-radius: 12px;
-  background-color: var(--color-dark);
-  border: 1px solid var(--color-gray);
+  background-color: #1f2937; /* dark card for contrast */
+  border: 1px solid var(--color-border);
+  color: var(--color-light); /* text color for dark background */
   text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Card text */
+.testimonial-card p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .testimonial-card h4 {
-  color: var(--color-primary);
+  color: var(--color-primary-green);
+  font-size: 1.25rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
 }
 
+.testimonial-card span {
+  font-size: 0.875rem;
+  color: #d1d5db; /* light gray for text on dark card */
+}
+
+/* Desktop styles */
 @media (min-width: 768px) {
-  .testimonial-slider {
-    overflow-x: hidden; /* Hide scrollbar on desktop */
-    justify-content: center;
+  .testimonial-slider-outer {
+    overflow-x: hidden; /* hide scrollbar */
   }
+
+  .testimonial-slider-inner {
+    justify-content: center; /* center the cards */
+  }
+
   .testimonial-card {
-    width: 30%; /* Set a fixed width for desktop */
+    width: 45%; /* wider horizontally for desktop */
+  }
+}
+
+/* Optional: larger gap on large screens */
+@media (min-width: 1024px) {
+  .testimonial-slider-inner {
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    width: 35%; /* three cards side by side if added */
   }
 }
